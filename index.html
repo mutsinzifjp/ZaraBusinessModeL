@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fixing Fast Fashion at Speed: How Zara Can Keep Its Edge Without Keeping Its Harm</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #fafafa;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: white;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 30px;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            border-radius: 10px;
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            font-weight: 300;
+        }
+        
+        .header .thesis {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            font-style: italic;
+        }
+        
+        .section {
+            margin-bottom: 50px;
+        }
+        
+        .section h2 {
+            color: #1e3c72;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #2a5298;
+            padding-bottom: 10px;
+        }
+        
+        .section h3 {
+            color: #2a5298;
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            margin-top: 25px;
+        }
+        
+        .executive-summary {
+            background: #f8f9ff;
+            padding: 30px;
+            border-radius: 10px;
+            border-left: 5px solid #2a5298;
+        }
+        
+        .visual-container {
+            margin: 30px 0;
+            padding: 20px;
+            background: #fff;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .flow-chart {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            margin: 20px 0;
+        }
+        
+        .flow-item {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px 20px;
+            border-radius: 8px;
+            margin: 5px;
+            flex: 1;
+            text-align: center;
+            min-width: 120px;
+            font-weight: 500;
+        }
+        
+        .flow-arrow {
+            color: #2a5298;
+            font-size: 1.5rem;
+            margin: 0 10px;
+        }
+        
+        .risk-ladder {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px 0;
+        }
+        
+        .risk-item {
+            background: #ff6b6b;
+            color: white;
+            padding: 15px 25px;
+            border-radius: 8px;
+            margin: 8px 0;
+            width: 80%;
+            text-align: center;
+            position: relative;
+        }
+        
+        .risk-item:after {
+            content: '↓';
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 1.5rem;
+            color: #ff6b6b;
+        }
+        
+        .risk-item:last-child:after {
+            display: none;
+        }
+        
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .table th,
+        .table td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .table th {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            font-weight: 600;
+        }
+        
+        .table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        
+        .table tr:hover {
+            background-color: #f5f5f5;
+        }
+        
+        .stakeholder-map {
+            position: relative;
+            width: 400px;
+            height: 400px;
+            margin: 30px auto;
+            border: 3px solid #2a5298;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .stakeholder-center {
+            background: #1e3c72;
+            color: white;
+            padding: 20px;
+            border-radius: 50%;
+            text-align: center;
+            font-weight: 600;
+            z-index: 10;
+        }
+        
+        .stakeholder-outer {
+            position: absolute;
+            background: #667eea;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+        
+        .competitor-matrix {
+            width: 500px;
+            height: 400px;
+            margin: 30px auto;
+            position: relative;
+            border: 2px solid #ddd;
+            background: linear-gradient(45deg, #f0f0f0 25%, transparent 25%), 
+                        linear-gradient(-45deg, #f0f0f0 25%, transparent 25%), 
+                        linear-gradient(45deg, transparent 75%, #f0f0f0 75%), 
+                        linear-gradient(-45deg, transparent 75%, #f0f0f0 75%);
+            background-size: 20px 20px;
+        }
+        
+        .axis-label {
+            position: absolute;
+            font-weight: 600;
+            color: #1e3c72;
+        }
+        
+        .x-axis {
+            bottom: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .y-axis {
+            left: -80px;
+            top: 50%;
+            transform: translateY(-50%) rotate(-90deg);
+        }
+        
+        .competitor-dot {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            color: white;
+            font-size: 0.8rem;
+            text-align: center;
+        }
+        
+        .solution-pyramid {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 30px 0;
+        }
+        
+        .pyramid-layer {
+            margin: 5px 0;
+            padding: 15px 25px;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: 500;
+            color: white;
+        }
+        
+        .layer-1 { background: #1e3c72; width: 80%; }
+        .layer-2 { background: #2a5298; width: 60%; }
+        .layer-3 { background: #667eea; width: 40%; }
+        
+        .chart-container {
+            width: 100%;
+            height: 300px;
+            margin: 20px 0;
+            position: relative;
+        }
+        
+        .timeline {
+            display: flex;
+            flex-direction: column;
+            margin: 30px 0;
+        }
+        
+        .timeline-item {
+            display: flex;
+            align-items: center;
+            margin: 15px 0;
+            padding: 15px;
+            background: #f8f9ff;
+            border-left: 4px solid #2a5298;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .timeline-date {
+            background: #1e3c72;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            margin-right: 20px;
+            font-weight: 600;
+            min-width: 100px;
+            text-align: center;
+        }
+        
+        .kpi-dashboard {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .kpi-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        
+        .kpi-number {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+        
+        .kpi-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        
+        .highlight {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+        
+        .call-to-action {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            margin-top: 40px;
+        }
+        
+        .call-to-action h3 {
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .flow-chart {
+                flex-direction: column;
+            }
+            
+            .flow-arrow {
+                transform: rotate(90deg);
+            }
+            
+            .stakeholder-map,
+            .competitor-matrix {
+                width: 100%;
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>Fixing Fast Fashion at Speed</h1>
+            <div class="thesis">How Zara Can Keep Its Edge Without Keeping Its Harm</div>
+            <p style="margin-top: 15px; font-size: 1.1rem;">Zara can decouple speed from harm by redesigning incentives, contracts, and data transparency—turning JIT into Just-in-Truth.</p>
+        </div>
+
+        <!-- Executive Summary with Visual -->
+        <div class="section">
+            <h2>Executive Summary</h2>
+            <div class="executive-summary">
+                <div class="visual-container">
+                    <h3 style="text-align: center; margin-bottom: 20px; color: #1e3c72;">JIT → Just-in-Truth Transformation</h3>
+                    <div style="display: grid; grid-template-columns: 1fr 2fr 1fr; gap: 20px; align-items: center;">
+                        <div style="background: #ff6b6b; color: white; padding: 20px; border-radius: 10px; text-align: center;">
+                            <h4>CURRENT RISKS</h4>
+                            <ul style="list-style: none; margin-top: 10px;">
+                                <li>• Labor Abuses</li>
+                                <li>• Environmental Impact</li>
+                                <li>• Regulatory Threats</li>
+                                <li>• Brand Erosion</li>
+                            </ul>
+                        </div>
+                        <div style="background: #2a5298; color: white; padding: 20px; border-radius: 10px; text-align: center;">
+                            <h4>TRANSFORMATION</h4>
+                            <div style="margin: 15px 0; font-size: 1.5rem;">⚡</div>
+                            <p>Ethics-First Operating Model</p>
+                            <p>Digital Transparency</p>
+                            <p>Living Wage Programs</p>
+                        </div>
+                        <div style="background: #27ae60; color: white; padding: 20px; border-radius: 10px; text-align: center;">
+                            <h4>OUTCOMES</h4>
+                            <ul style="list-style: none; margin-top: 10px;">
+                                <li>• ESG Capital Access</li>
+                                <li>• Consumer Loyalty</li>
+                                <li>• Stable Margins</li>
+                                <li>• First-Mover Advantage</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <p><strong>What's Happening:</strong> Zara has become a global fashion leader through its unparalleled "just-in-time" (JIT) operating model, delivering thousands of new designs to market in as little as two weeks. This speed drives high sales and a core competitive advantage.</p>
+                
+                <p><strong>Why It Matters:</strong> This system is not just a business model; it's a social and environmental force. The pressure created by JIT leads to systemic harm, including documented labor abuses, a massive environmental footprint, and an erosion of brand trust among a new generation of conscious consumers. The impending wave of EU and US regulations on supply chain due diligence makes this risk an existential threat.</p>
+                
+                <p><strong>The Root Cause:</strong> The core issue is a misalignment of incentives and a fundamental lack of transparency. The relentless focus on cost and speed pushes responsibility down the supply chain, creating an environment where subcontractors are incentivized to cut corners on labor and safety to meet impossible deadlines. This is a systemic, not an episodic, problem.</p>
+                
+                <p><strong>The Blueprint:</strong> We propose a comprehensive solution architecture that reframes Zara's entire operating model. This blueprint includes brand-level ethics governance, finance-linked living wage programs, worker voice mechanisms, and digital product passports to create end-to-end traceability.</p>
+                
+                <p><strong>The Outcomes:</strong> By executing this strategy, Zara can mitigate long-term risk, build genuine consumer loyalty, and achieve a more stable margin mix. Our scenarios show that while there is an initial increase in costs, the break-even point is achievable within two years, positioning Zara to attract ESG-aligned capital and become a first-mover in mid-market sustainability.</p>
+            </div>
+        </div>
+
+        <!-- Part 1: Business of Speed -->
+        <div class="section">
+            <h2>Part 1: The Business of Speed—A Double-Edged Sword</h2>
+            
+            <div class="visual-container">
+                <h3 style="text-align: center; margin-bottom: 20px;">Zara's JIT Operating Loop</h3>
+                <div class="flow-chart">
+                    <div class="flow-item">DESIGN</div>
+                    <span class="flow-arrow">→</span>
+                    <div class="flow-item">PRODUCTION</div>
+                    <span class="flow-arrow">→</span>
+                    <div class="flow-item">DISTRIBUTION</div>
+                    <span class="flow-arrow">→</span>
+                    <div class="flow-item">RETAIL</div>
+                    <span class="flow-arrow">→</span>
+                    <div class="flow-item">CONSUMER</div>
+                </div>
+                <div style="text-align: center; margin-top: 15px; color: #ff6b6b; font-weight: 600;">
+                    ⚠️ Points of Harm: Labor Exploitation | Environmental Impact | Supply Chain Opacity
+                </div>
+            </div>
+            
+            <p>Zara's value chain is a masterclass in agility. The process is a tight loop from design to retail, allowing for rapid-fire production and market response. However, this relentless speed is also the source of its systemic harm.</p>
+
+            <h3>The Causal Chain of Harm</h3>
+            <p>The JIT model, while efficient, creates a causal chain of harm.</p>
+            
+            <div class="visual-container">
+                <h3 style="text-align: center; margin-bottom: 20px;">Risk Escalation Ladder</h3>
+                <div class="risk-ladder">
+                    <div class="risk-item">JIT Incentives: Cost + Speed Pressure</div>
+                    <div class="risk-item">Supplier Pressure: Impossible Deadlines</div>
+                    <div class="risk-item">Unauthorized Subcontracting</div>
+                    <div class="risk-item">Labor Shortcuts: Low Wages + Unsafe Conditions</div>
+                    <div class="risk-item">Documented Incidents: Brazil, Myanmar, etc.</div>
+                </div>
+            </div>
+
+            <ul>
+                <li><strong>JIT Incentives:</strong> The push for low costs, high volume, and lightning-fast delivery creates a system where every day and every dollar matters. This is a direct consequence of the financialization of the global economy and the relentless, short-term focus of the fashion calendar.</li>
+                <li><strong>Supplier Pressure:</strong> These incentives are passed down to suppliers who, to maintain their contracts, must agree to impossible deadlines and low prices.</li>
+                <li><strong>Subcontracting:</strong> To manage this pressure, suppliers often outsource parts of the work to unauthorized subcontractors who operate outside of official oversight.</li>
+                <li><strong>Labor Shortcuts:</strong> These unauthorized facilities, facing intense pressure and no oversight, resort to shortcuts: low wages, forced overtime, and unsafe working conditions.</li>
+                <li><strong>Incidents:</strong> This leads directly to documented incidents of labor abuse, like the "slave-like" conditions found in Brazilian workshops and the documented union-busting in Myanmar.</li>
+            </ul>
+        </div>
+
+        <!-- Part 2: Evidence Base -->
+        <div class="section">
+            <h2>Part 2: The Evidence Base and Regulatory Inevitability</h2>
+
+            <h3>Human Impacts and Regulatory Response</h3>
+            
+            <div class="visual-container">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Incident / Region</th>
+                            <th>Violation Type</th>
+                            <th>Regulatory Trigger</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Brazil 2011</td>
+                            <td>16-hour workdays, "slave-like conditions"</td>
+                            <td>Supply chain due diligence requirements</td>
+                        </tr>
+                        <tr>
+                            <td>Myanmar 2020</td>
+                            <td>Union-busting, worker terminations</td>
+                            <td>Labor rights enforcement mechanisms</td>
+                        </tr>
+                        <tr>
+                            <td>Xinjiang Region</td>
+                            <td>Potential forced labor in cotton production</td>
+                            <td>US Uyghur Forced Labor Prevention Act</td>
+                        </tr>
+                        <tr>
+                            <td>EU Operations</td>
+                            <td>Lack of supply chain transparency</td>
+                            <td>EU Corporate Sustainability Due Diligence Directive</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <p><strong>Wages and Hours:</strong> While Inditex has a framework agreement with a global union for living wages, independent reports find a lack of consistent enforcement.</p>
+            
+            <p><strong>Labor Incidents:</strong> Zara-specific incidents have been documented in multiple geographies. In Brazil (2011), inspectors found laborers working 16-hour days for meager pay in "slave-like conditions." In Myanmar (2020), garment workers were fired for attempting to form a union.</p>
+
+            <p>These incidents are no longer just PR problems; they are regulatory triggers. The US Uyghur Forced Labor Prevention Act creates a rebuttable presumption that all goods from the Xinjiang region are made with forced labor, banning their import. This forces companies like Zara to have verifiable, end-to-end traceability of their cotton and other raw materials. Furthermore, the EU Corporate Sustainability Due Diligence Directive (CSDDD), which has now entered into force, mandates that large companies actively identify, prevent, and mitigate human rights and environmental harms across their entire value chain. This makes a reactive approach to supply chain ethics a legal liability.</p>
+
+            <h3>Environmental Impacts and Regulatory Response</h3>
+            <p><strong>Environmental Data:</strong> The industry is the second-largest consumer of water and responsible for an estimated 10% of global carbon emissions. Zara's contribution to textile waste is significant.</p>
+            
+            <p><strong>CSR Review:</strong> Zara's "Join Life" program and 2025/2030 goals are ambitious, but their execution is often seen as public relations. Third-party analyses argue that the sheer volume of production undermines these pledges.</p>
+            
+            <p><strong>The Digital Product Passport (DPP):</strong> The impending EU Digital Product Passport will require all products to have a scannable QR code linking to a digital file containing information on material composition, durability, and reparability. This will force unprecedented transparency and make greenwashing more difficult.</p>
+
+            <div class="highlight">
+                <p><strong>Key Insight:</strong> The combination of CSDDD and the Digital Product Passport means Zara's transformation is no longer optional CSR; it's a matter of future-proofing its business and maintaining market access in its most important regions.</p>
+            </div>
+        </div>
+
+        <!-- Part 3: Stakeholder Reality Map -->
+        <div class="section">
+            <h2>Part 3: The Stakeholder Reality Map</h2>
+            
+            <div class="visual-container">
+                <h3 style="text-align: center; margin-bottom: 20px;">Conflicting Stakeholder Incentives</h3>
+                <div class="stakeholder-map">
+                    <div class="stakeholder-center">ZARA<br>EXECUTIVES<br><small>Shareholder Value<br>& Market Share</small></div>
+                    <div class="stakeholder-outer" style="top: 10px; left: 50%; transform: translateX(-50%);">
+                        <strong>INVESTORS</strong><br>Profitable Model + ESG Risks
+                    </div>
+                    <div class="stakeholder-outer" style="top: 50px; right: 10px;">
+                        <strong>GEN-Z</strong><br>Sustainability Values<br>vs Affordability
+                    </div>
+                    <div class="stakeholder-outer" style="bottom: 50px; right: 10px;">
+                        <strong>SUPPLIERS</strong><br>Profitability Under<br>Immense Pressure
+                    </div>
+                    <div class="stakeholder-outer" style="bottom: 10px; left: 50%; transform: translateX(-50%);">
+                        <strong>WORKERS</strong><br>Primary Incentive:<br>Survival
+                    </div>
+                    <div class="stakeholder-outer" style="bottom: 50px; left: 10px;">
+                        <strong>GOVERNMENTS</strong><br>Labor Enforcement<br>vs Economic Reality
+                    </div>
+                    <div class="stakeholder-outer" style="top: 50px; left: 10px;">
+                        <strong>NGOs</strong><br>Watchdogs &<br>Public Scrutiny
+                    </div>
+                </div>
+            </div>
+
+            <p>To understand the problem, we must map the conflicting incentives of each stakeholder:</p>
+            <ul>
+                <li><strong>Workers & Supervisors:</strong> Their primary incentive is survival.</li>
+                <li><strong>Suppliers:</strong> Their primary incentive is profitability under immense pressure.</li>
+                <li><strong>Zara Executives:</strong> Their primary incentive is shareholder value and market share.</li>
+                <li><strong>Investors:</strong> They benefit from the current profitable model, but a growing number are now focused on ESG risks.</li>
+                <li><strong>Gen-Z Consumers:</strong> They are caught in the "attitude-behavior gap"—valuing sustainability but driven by the affordability of fast fashion.</li>
+                <li><strong>Governments:</strong> They balance labor enforcement with the economic reality of maintaining jobs.</li>
+                <li><strong>NGOs & Activists:</strong> They serve as the watchdogs, exposing ethical violations and driving public scrutiny.</li>
+            </ul>
+        </div>
+
+        <!-- Part 4: Competitive Benchmarking -->
+        <div class="section">
+            <h2>Part 4: Competitive Benchmarking: A Call to Lead</h2>
+            
+            <div class="visual-container">
+                <h3 style="text-align: center; margin-bottom: 20px;">Market Positioning Matrix</h3>
+                <div class="competitor-matrix">
+                    <div class="axis-label x-axis">Speed / Agility →</div>
+                    <div class="axis-label y-axis">Ethical / Sustainable Practices →</div>
+                    
+                    <div class="competitor-dot" style="background: #e74c3c; bottom: 20px; left: 20px;">SHEIN<br><small>Ultra-Fast<br>Hyper-Cheap</small></div>
+                    <div class="competitor-dot" style="background: #f39c12; bottom: 80px; left: 200px;">H&M<br><small>Mixed<br>Credibility</small></div>
+                    <div class="competitor-dot" style="background: #3498db; bottom: 150px; left: 250px;">ZARA<br><small>Current<br>Position</small></div>
+                    <div class="competitor-dot" style="background: #27ae60; top: 20px; right: 20px;">PATAGONIA<br><small>Slow Fashion<br>Premium</small></div>
+                    
+                    <!-- Opportunity Zone -->
+                    <div style="position: absolute; top: 100px; left: 300px; right: 50px; bottom: 100px; 
+                                background: rgba(46, 204, 113, 0.2); border: 2px dashed #27ae60; border-radius: 10px;
+                                display: flex; align-items: center; justify-content: center;">
+                        <div style="background: white; padding: 10px; border-radius: 5px; text-align: center; font-weight: 600; color: #27ae60;">
+                            OPPORTUNITY ZONE<br><small>Mid-Market Sustainability</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <p>Zara's current position is precarious. To understand the opportunity, we must compare it to its key competitors.</p>
+
+            <p><strong>SHEIN (Ultra-Fast & Hyper-Cheap):</strong> SHEIN has pushed fast fashion to an extreme, with thousands of new products daily. Their model is even more opaque and decentralized than Zara's, making them the industry's greatest reputational risk. Zara cannot compete with SHEIN on price alone without sacrificing all ethical pretense.</p>
+
+            <p><strong>H&M (Mixed Credibility):</strong> H&M occupies a similar market position to Zara but has a longer-standing "Conscious" line. However, this has been met with skepticism and accusations of greenwashing, as the line represents a small portion of their overall business.</p>
+
+            <p><strong>Patagonia (Slow Fashion & Brand Premium):</strong> Patagonia is the gold standard for ethical, durable clothing. They've built a multi-billion dollar business on the principle of "buy less, wear more" and have cultivated a fiercely loyal customer base that is willing to pay a premium for integrity.</p>
+
+            <div class="highlight">
+                <p><strong>Strategic Opportunity:</strong> Zara's opportunity is to occupy the mid-market sustainability space. It can become the bridge between ultra-fast disposable fashion and expensive slow fashion, retaining its agility while establishing a new, ethical benchmark for its competitors.</p>
+            </div>
+        </div>
+
+        <!-- Part 5: Solution Architecture -->
+        <div class="section">
+            <h2>Part 5: Solution Architecture: From Symptoms to Systems</h2>
+            
+            <div class="visual-container">
+                <h3 style="text-align: center; margin-bottom: 20px;">Just-in-Truth System Architecture</h3>
+                <div class="solution-pyramid">
+                    <div class="pyramid-layer layer-3">
+                        <strong>TRACEABILITY (Tech-Enabled)</strong><br>
+                        Digital Product Passports • End-to-End Visibility
+                    </div>
+                    <div class="pyramid-layer layer-2">
+                        <strong>CONTRACTS & FINANCE</strong><br>
+                        Living-Wage-Linked Early Pay • Shifted KPIs
+                    </div>
+                    <div class="pyramid-layer layer-1">
+                        <strong>GOVERNANCE FOUNDATION</strong><br>
+                        Ethics P&L • Red-Line Policies • No Unauthorized Subcontracting
+                    </div>
+                </div>
+            </div>
+
+            <p>The solution requires a fundamental shift in governance, finance, and technology. It's about building a "Just-in-Truth" system that embeds ethics into the core of the business model.</p>
+
+            <h3>Governance:</h3>
+            <ul>
+                <li><strong>Ethics P&L:</strong> Create a new brand-level P&L that quantifies the financial impact of ethical and unethical behavior.</li>
+                <li><strong>Red-Line Policies:</strong> Enforce a strict "no unauthorized subcontracting" policy.</li>
+            </ul>
+
+            <h3>Contracts & Finance:</h3>
+            <ul>
+                <li><strong>Living-Wage-Linked Early Pay:</strong> Implement a program where suppliers who verify they pay a living wage get accelerated payment terms (e.g., 15 days instead of 90 days).</li>
